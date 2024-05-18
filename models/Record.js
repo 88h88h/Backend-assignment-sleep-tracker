@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const durationSchema = new mongoose.Schema({
+const recordSchema = new mongoose.Schema({
   userId: {
     type: String,
     required: true,
@@ -18,6 +18,6 @@ const durationSchema = new mongoose.Schema({
   },
 });
 
-const Duration = mongoose.model("Duration", durationSchema);
+const Record = mongoose.model("Record", recordSchema);
 
-module.exports = Duration;
+module.exports = Record;
