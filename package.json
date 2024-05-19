@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Backend for a Sleep Tracker Mobile App",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-dev": "cross-env NODE_ENV=development nodemon server.js",
+    "test": "cross-env NODE_ENV=test mocha --exit"
   },
   "author": "Harsh Prakash",
   "license": "ISC",
@@ -14,5 +16,11 @@
     "express": "^4.19.2",
     "mongoose": "^8.4.0",
     "nodemon": "^3.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "chai": "^5.1.1",
+    "chai-http": "^4.4.0",
+    "mocha": "^10.4.0"
   }
 }
