@@ -1,10 +1,10 @@
-const { Router } = require("express");
-const dataController = require("../controllers/dataController");
+import { Router } from "express";
+import { add, retrieve, deleteRecord } from "../controllers/dataController.js";
 
 const router = Router();
 
-router.post("/sleep", dataController.add);
-router.get("/sleep/:userId", dataController.retrieve);
-router.delete("/sleep/:recordId", dataController.delete);
+router.post("/sleep", add);
+router.get("/sleep/:userId", retrieve);
+router.delete("/sleep/:recordId", deleteRecord);
 
-module.exports = router;
+export default router;

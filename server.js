@@ -1,10 +1,13 @@
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
-require("dotenv").config();
-const sleepRoutes = require("./routes/sleepRoutes");
+import express from "express";
+import cors from "cors";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import sleepRoutes from "./routes/sleepRoutes.js";
+
+dotenv.config();
 
 const app = express();
+
 app.use(
   cors({
     origin: "*",
@@ -25,5 +28,7 @@ mongoose
     });
   })
   .catch((err) => {
-    console.log(err);
+    console.error(err);
   });
+
+export default app;

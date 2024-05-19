@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const recordSchema = new mongoose.Schema({
   userId: {
@@ -6,18 +6,16 @@ const recordSchema = new mongoose.Schema({
     required: true,
   },
   hours: {
-    type: String,
-    required: Number,
-    unique: true,
+    type: Number, // Correcting the type to Number
+    required: true,
   },
-
   timestamp: {
     type: Date,
     required: true,
-    unique: true,
+    default: Date.now, // Set default to current date
   },
 });
 
 const Record = mongoose.model("Record", recordSchema);
 
-module.exports = Record;
+export default Record;

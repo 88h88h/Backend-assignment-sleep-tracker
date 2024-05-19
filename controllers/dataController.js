@@ -1,7 +1,7 @@
-const Record = require("../models/Record");
+import Record from "../models/Record.js";
 
 // Add the record
-module.exports.add = async (req, res) => {
+export const add = async (req, res) => {
   const { userId, hours } = req.body;
   if (!userId || !hours) {
     return res.status(400).send("Missing required fields");
@@ -25,8 +25,8 @@ module.exports.add = async (req, res) => {
 };
 
 // Retrieve the record
-module.exports.retrieve = async (req, res) => {
-  const userId = req.params.userId;
+export const retrieve = async (req, res) => {
+  const { userId } = req.params;
 
   try {
     const userRecords = await Record.find({ userId }).sort({ timestamp: -1 });
@@ -37,8 +37,8 @@ module.exports.retrieve = async (req, res) => {
 };
 
 // Delete the record
-module.exports.delete = async (req, res) => {
-  const recordId = req.params.recordId;
+export const deleteRecord = async (req, res) => {
+  const { recordId } = req.params;
 
   try {
     const result = await Record.findByIdAndDelete(recordId);
@@ -47,10 +47,9 @@ module.exports.delete = async (req, res) => {
     }
     res.status(200).send("Record deleted");
   } catch (error) {
-    const errMessage = error.message;
     res.status(500).send({
-      "Error Message": errMessage,
-      Suggestion: "Use a valid mongoDB id",
+      "Error Message": error.message,
+      Suggestion: "Use a valid MongoDB id",
     });
   }
 };
