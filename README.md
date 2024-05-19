@@ -51,7 +51,7 @@ http://localhost:5000/api.
 
 ## Testing
 
-- Make a test database 'sleepDB_test' with a collection named 'records' \
+- Make a test database 'sleepDB_test' with a collection named 'records' 
 
 - Make a '.env.test' in the root directory and write in it
 
@@ -60,7 +60,7 @@ PORT=5000
 MONGO_URI=WRITE_YOUR_TEST_DB_MONGO_URI
 ```
 
-The test file 'api.test.js' is provided in the 'test' folder of the root directory. \
+The test file 'api.test.js' is provided in the 'test' folder of the root directory. 
 
 To run the tests, use the following command:
 
