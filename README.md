@@ -6,28 +6,36 @@ This repository contains the code for the Sleep Tracker API, which is designed t
 
 To set up the project, follow these steps:
 
-1. Clone the repository:
+#### 1. Clone the repository:
 
 ```bash
 git clone https://github.com/88h88h/Backend-assignment-sleep-tracker.git
 ```
 
-2. Navigate to the root directory:
+#### 2. Navigate to the root directory:
 
 ```bash
 cd Backend-assignment-sleep-tracker
 ```
 
-3. Install dependencies:
+#### 3. Install dependencies:
 
 ```bash
 npm install
 ```
+#### 4. Setup MongoDB Database with Database Name 'SleepDB' and collection name 'records'
 
-4. Run the server:
+#### 5. Make a '.env.development' in the root directory and write in it
+
+```bash 
+PORT=5000
+MONGO_URI=WRITE_YOUR_MONGO_URI
+```
+
+#### 6. Run the server:
 
 ```bash
-node server.js
+npm start-dev
 ```
 
 The server should now be running on 
@@ -92,7 +100,7 @@ The Sleep Tracker API provides the following endpoints:
 - URL: /api/sleep/:userId
 - Method: GET
 - Path Parameters:
-  - userId: String - The ID of the user.
+  - userId: String (required) - The ID of the user.
 - Success Response:
   - Code: 200
   - Content: Array of sleep records for the specified user.
@@ -102,11 +110,13 @@ The Sleep Tracker API provides the following endpoints:
 
 ### 3. Delete a Sleep Record
 
+Note - recordId should be strictly a valid MongoDB id  
+
 ```bash
 - URL: /api/sleep/:recordId
 - Method: DELETE
 - Path Parameters:
-  - recordId: String (required) - The ID of the sleep record.
+  - recordId: String (required) - The MongoDB ID of the sleep record.
 - Success Response:
   - Code: 200
   - Content: Record deleted
@@ -120,7 +130,7 @@ The Sleep Tracker API provides the following endpoints:
 
 ## Live API
 
-The API is also hosted on https://backend-assignment-sleep-tracker.onrender.com/api/. You can use this URL to interact with the API endpoints directly.
+The API is also hosted on https://backend-assignment-sleep-tracker.onrender.com/api/. You can use this URL to interact with the API endpoints directly. \
 Note: The API might take around 1 minute to load, only for the first time.
 
 ### POST Endpoint
