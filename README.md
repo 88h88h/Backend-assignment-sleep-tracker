@@ -35,7 +35,7 @@ MONGO_URI=WRITE_YOUR_MONGO_URI
 #### 6. Run the server:
 
 ```bash
-npm start-dev
+npm run start-dev
 ```
 
 The server should now be running on 
