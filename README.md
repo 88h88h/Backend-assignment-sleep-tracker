@@ -35,6 +35,11 @@ The server should now be running on
 ```bash 
 http://localhost:5000. 
 ```
+and the APIs can be accessed through 
+
+```bash 
+http://localhost:5000/api. 
+```
 
 ## Testing
 
