@@ -61,9 +61,12 @@ npm run test
 
 ## API Endpoints
 
-The Sleep Tracker API provides the following endpoints:
+The Sleep Tracker API provides the following endpoints: 
+
 
 ### 1. Add a Sleep Record
+
+Request Body should contain a valid JSON object.
 
 ```bash
 - URL: /api/sleep
