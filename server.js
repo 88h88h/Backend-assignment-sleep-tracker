@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import sleepRoutes from "./routes/sleepRoutes.js";
 
-dotenv.config();
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
 const app = express();
 
@@ -24,7 +24,9 @@ mongoose
   .then(() => {
     console.log("Connected to Database");
     app.listen(PORT, () => {
-      console.log(`Listening at port: ${PORT}`);
+      console.log(
+        `Listening at port: ${PORT} and running in mode: ${process.env.NODE_ENV}`
+      );
     });
   })
   .catch((err) => {
